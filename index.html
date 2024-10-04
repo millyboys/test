@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#007bff" />
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <script>
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js').then((registration) => {
+              console.log('ServiceWorker registered: ', registration);
+            }).catch((registrationError) => {
+              console.log('ServiceWorker registration failed: ', registrationError);
+            });
+          });
+        }
+      </script>
+</body>
+</html>
